@@ -1,16 +1,24 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
-  "version": "1.0",
+  "name": "Nyan Cat Jenkins Progress",
+  "description": "A Chrome plugin for replacing cruddy Jenkins progress bars with sick Nyan Cats!",
+  "version": "0.1",
 
   "browser_action": {
-    "default_icon": "icon.png",
-    "default_popup": "popup.html"
+    "name": "Nyan, nyan, nyan!"
   },
-  "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
+
+  "content_scripts": [
+    {
+      "css": [ "assets/css/nyan-jenkins.css" ],
+      "matches": [
+        "https://ci.ops.powershop.com/"
+      ]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "assets/images/*"
   ]
 }
