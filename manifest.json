@@ -3,7 +3,7 @@
 
   "name": "Nyan Cat Jenkins Progress",
   "description": "A Chrome plugin for replacing cruddy Jenkins progress bars with sick Nyan Cats!",
-  "version": "0.1",
+  "version": "0.2",
 
   "browser_action": {
     "name": "Nyan, nyan, nyan!"
