@@ -1,5 +1,5 @@
-# Chrome Nyan Cat Jenkins
-A Chrome plugin for replacing cruddy Jenkins progress bars with sick
+# Nyan Cat Jenkins
+A Chrome extension for replacing cruddy Jenkins progress bars with sick
 [Nyan Cat](http://nyan.cat) tails!
 
 ## Screenshot
