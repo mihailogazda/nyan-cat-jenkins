@@ -15,4 +15,5 @@ A Chrome plugin for replacing cruddy Jenkins progress bars with sick
 * Listing and adding of User matches
 
 ### Other
-* ~~Add background music~~
+* Add a plugin icon
+* ~~Add annoyingly repetitive background music~~
