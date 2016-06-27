@@ -13,6 +13,7 @@ A Chrome extension for replacing cruddy Jenkins progress bars with sick
 * Create a popup UI page
 * Listing and adding of URL matches for Jenkins servers
 * Listing and adding of User matches
+* Create a background colour toggle
 
 ### Other
 * Add a plugin icon
