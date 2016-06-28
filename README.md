@@ -2,25 +2,24 @@
 A Chrome extension for replacing cruddy Jenkins progress bars with sick
 [Nyan Cat](http://nyan.cat) rainbow trails!
 
-Download the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/nyan-cat-jenkins/bahldljfcnpmdddafphlbpoiegfbhbkh)!
+Download the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/nyan-cat-jenkins/bahldljfcnpmdddafphlbpoiegfbhbkh)
 
 ## Screenshot
 ![screenshot image](https://raw.githubusercontent.com/NoodleChump/nyan-cat-jenkins/master/screenshot.png)
 
 ## Features
-* Awesome animated Nyan cats!
+* Animated rainbows and stuff!
 * Fancy popup configuration
-* Customer Jenkins server URL
-* Background toggling
+* Custom Jenkins server URL
+* Space blue background toggle
 
 ## TODOs
 ### Fixes
-* Stop poor Nyan Cat's head at 100%, instead of letting his butt through
+* Stop poor Nyan Cat's head at 100%, instead of letting his butt through the end of the progress bar
 
 ### Popup UI
-* Fun stuff with an input username?
+* Fun stuff with a given username?
 * Multiple Jenkins server compatibility?
 
 ### Other
-
-* ~~Add annoyingly repetitive background music~~
+* ~~Add annoying and repetitive background music~~
