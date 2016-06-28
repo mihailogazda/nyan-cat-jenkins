@@ -1,17 +1,16 @@
 # Nyan Cat Jenkins
 A Chrome extension for replacing cruddy Jenkins progress bars with sick
-[Nyan Cat](http://nyan.cat) tails!
+[Nyan Cat](http://nyan.cat) rainbow trails!
 
 ## Screenshot
-![screenshot image](https://raw.githubusercontent.com/NoodleChump/chrome-nyan-cat-jenkins/master/screenshot.png)
+![screenshot image](https://raw.githubusercontent.com/NoodleChump/nyan-cat-jenkins/master/screenshot.png)
 
 ## TODOs
 ### Popup UI
-* Create a popup UI page
-* Listing and adding of URL matches for Jenkins servers
-* Listing and adding of User matches
-* Create a background colour toggle
+* Create a background toggle
+* Fun stuff with an input username?
+* Multiple Jenkins server compatibility?
 
 ### Other
-* Add a plugin icon
+* Fix poor Nyan Cat's head to being at 100%, instead of his butt
 * ~~Add annoyingly repetitive background music~~
