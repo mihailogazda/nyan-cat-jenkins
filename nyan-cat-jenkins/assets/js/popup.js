@@ -1,4 +1,11 @@
 function validateSettings(settings) {
+  if (settings.jenkinsUrl == '') {
+    document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #cc0000';
+    return false;
+  } else {
+    document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #88cc00';
+  }
+
   return true;
 }
 
@@ -8,24 +15,31 @@ function updateSettings(settings) {
   }, null);
 }
 
-function fillSettings() {
-  chrome.storage.sync.get(function(settings) {
-    console.log(settings);
-
-    if (settings.jenkinsUrl != null) document.getElementById("settings-jenkins-url").value = settings.jenkinsUrl;
-  });
+function fillSettings(settings) {
+  if (settings.jenkinsUrl != null) document.getElementById('settings-jenkins-url').value = settings.jenkinsUrl;
 }
 
-document.getElementById("settings-form").addEventListener("submit", function() {
+function refillSettings(settings) {
+  if (settings == null) {
+    chrome.storage.sync.get(fillSettings);
+  } else {
+    fillSettings(settings);
+  }
+}
+
+document.getElementById('settings-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
   var settings = {
-    "jenkinsUrl": document.getElementById("settings-jenkins-url").value
+    'jenkinsUrl': document.getElementById('settings-jenkins-url').value
   };
 
   if (validateSettings(settings)) {
     updateSettings(settings);
-    fillSettings();
-    //TODO Something flashy to say yay!
+    refillSettings();
+  } else {
+    refillSettings(settings);
   }
 }, false);
 
-fillSettings();
+refillSettings();
