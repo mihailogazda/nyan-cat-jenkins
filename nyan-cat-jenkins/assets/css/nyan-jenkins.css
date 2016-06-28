@@ -12,7 +12,7 @@ table.progress-bar {
 }
 
 table tr td.progress-bar-done {
-  background: url("chrome-extension://__MSG_@@extension_id__/assets/images/rainbow.gif") repeat-x center center;
+  background: url("chrome-extension://__MSG_@@extension_id__/assets/images/rainbow.gif") repeat-x right center;
   background-size: 16px 25px;
 }
 
