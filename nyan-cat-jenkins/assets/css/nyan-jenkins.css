@@ -1,6 +1,6 @@
 table.progress-bar {
-  height: 24px !important;
-  width: 100% !important;
+  height: 25px !important;
+  width: 160px !important;
   border-width: 0 !important;
   background-color: #003366;
   border-radius: 5px;
@@ -13,10 +13,10 @@ table.progress-bar {
 
 table tr td.progress-bar-done {
   background: url("chrome-extension://__MSG_@@extension_id__/assets/images/rainbow.gif") repeat-x center center;
-  background-size: 16px;
+  background-size: 16px 25px;
 }
 
 table tr td.progress-bar-left {
   background: url("chrome-extension://__MSG_@@extension_id__/assets/images/nyan.gif") no-repeat left center;
-  background-size: 24px;
+  background-size: 30px 25px;
 }
