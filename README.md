@@ -2,7 +2,7 @@
 A Chrome extension for replacing cruddy Jenkins progress bars with sick
 [Nyan Cat](http://nyan.cat) rainbow trails!
 
-Download the extension from the [Chrome Web Store](https://chrome.google.com/webstore/detail/nyan-cat-jenkins/bahldljfcnpmdddafphlbpoiegfbhbkh)
+Download now from the [Chrome Web Store](https://chrome.google.com/webstore/detail/nyan-cat-jenkins/bahldljfcnpmdddafphlbpoiegfbhbkh)
 
 ## Screenshot
 ![screenshot image](https://raw.githubusercontent.com/NoodleChump/nyan-cat-jenkins/master/screenshot.png)
