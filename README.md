@@ -7,7 +7,6 @@ A Chrome extension for replacing cruddy Jenkins progress bars with sick
 
 ## TODOs
 ### Popup UI
-* Create a background toggle
 * Fun stuff with an input username?
 * Multiple Jenkins server compatibility?
 

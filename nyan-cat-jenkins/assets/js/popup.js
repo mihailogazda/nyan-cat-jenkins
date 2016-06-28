@@ -11,12 +11,14 @@ function validateSettings(settings) {
 
 function updateSettings(settings) {
   chrome.storage.sync.set({
-    'jenkinsUrl': settings.jenkinsUrl
+    'jenkinsUrl': settings.jenkinsUrl,
+    'disableBackground': settings.disableBackground
   }, null);
 }
 
 function fillSettings(settings) {
   if (settings.jenkinsUrl != null) document.getElementById('settings-jenkins-url').value = settings.jenkinsUrl;
+  if (settings.disableBackground != null) document.getElementById('settings-disable-background').checked = settings.disableBackground;
 }
 
 function refillSettings(settings) {
@@ -31,7 +33,8 @@ document.getElementById('settings-form').addEventListener('submit', function(e) 
   e.preventDefault();
 
   var settings = {
-    'jenkinsUrl': document.getElementById('settings-jenkins-url').value
+    'jenkinsUrl': document.getElementById('settings-jenkins-url').value,
+    'disableBackground': document.getElementById('settings-disable-background').checked
   };
 
   if (validateSettings(settings)) {
