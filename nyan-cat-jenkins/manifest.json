@@ -15,7 +15,8 @@
       "128": "assets/images/icon_128.png",
       "384": "assets/images/icon_384.png"
     },
-    "default_title": "Nyan, nyan, nyan!"
+    "default_title": "Nyan, nyan, nyan!",
+    "default_popup": "src/popup/popup.html"
   },
 
   "icons": {
@@ -29,14 +30,20 @@
 
   "content_scripts": [
     {
-      "css": [ "assets/css/nyan-jenkins.css" ],
+      "js": [ "assets/js/css-inject.js" ],
       "matches": [
-        "https://ci.ops.powershop.com/*"
+        "<all_urls>"
       ]
     }
   ],
 
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+
   "web_accessible_resources": [
-    "assets/images/*"
+    "assets/images/*.gif",
+    "assets/css/nyan-jenkins.css"
   ]
 }
