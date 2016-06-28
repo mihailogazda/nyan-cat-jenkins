@@ -50,7 +50,7 @@ input[type=text]:focus {
 input[type=checkbox] {
   float: left;
   display: inline-block;
-  height: 6px;
+  height: 12px;
 }
 
 input[type=submit] {
