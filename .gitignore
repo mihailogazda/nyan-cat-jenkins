@@ -1,4 +1,7 @@
+# Development environment business
 .DS_Store
 .idea/
+
+# Chrome app stuff
 nyan-cat-jenkins.crx
 nyan-cat-jenkins.pem
