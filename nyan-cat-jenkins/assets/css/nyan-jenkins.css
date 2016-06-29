@@ -28,6 +28,8 @@ table tr td.progress-bar-done {
 }
 
 table tr td.progress-bar-left {
+  padding-left: 30px;
+  margin-left: -30px;
   background: url("chrome-extension://__MSG_@@extension_id__/assets/images/nyan.gif") no-repeat left center;
   background-size: 30px 25px;
   background-color: transparent !important;
