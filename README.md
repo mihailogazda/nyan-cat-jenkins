@@ -9,14 +9,11 @@ Download now from the [Chrome Web Store](https://chrome.google.com/webstore/deta
 
 ## Features
 * Animated rainbows and stuff!
-* Fancy popup configuration
+* Starry, space blue background
+* Fancy configuration popup
 * Custom Jenkins server URL
-* Space blue background toggle
 
 ## TODOs
-### Fixes
-* Stop poor Nyan Cat's head at 100%, instead of letting his butt through the end of the progress bar
-
 ### Popup UI
 * Fun stuff with a given username?
 * Multiple Jenkins server compatibility?
