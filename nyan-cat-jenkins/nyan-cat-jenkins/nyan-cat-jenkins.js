@@ -1,6 +1,6 @@
 function injectStyle(settings) {
   var link = document.createElement('link');
-  link.href = chrome.extension.getURL('/assets/css/nyan-jenkins.css');
+  link.href = chrome.extension.getURL('nyan-cat-jenkins/nyan-cat-jenkins.css');
   link.type = 'text/css';
   link.rel = 'stylesheet';
 
