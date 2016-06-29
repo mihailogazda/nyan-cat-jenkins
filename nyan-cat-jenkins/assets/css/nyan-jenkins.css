@@ -6,6 +6,10 @@ table.progress-bar {
   border-radius: 5px;
 }
 
+table.progress-bar.red {
+  background-color: #881100;
+}
+
 .pane.build-controls,
 #executors table td.pane {
   vertical-align: top !important;
@@ -14,9 +18,15 @@ table.progress-bar {
 table tr td.progress-bar-done {
   background: url("chrome-extension://__MSG_@@extension_id__/assets/images/rainbow.gif") repeat-x right center;
   background-size: 16px 25px;
+  background-color: transparent !important;
 }
 
 table tr td.progress-bar-left {
   background: url("chrome-extension://__MSG_@@extension_id__/assets/images/nyan.gif") no-repeat left center;
   background-size: 30px 25px;
+  background-color: transparent !important;
+}
+
+.no-background {
+  background-color: transparent !important;
 }

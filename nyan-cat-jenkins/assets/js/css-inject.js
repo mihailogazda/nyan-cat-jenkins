@@ -6,14 +6,25 @@ function injectStyle(settings) {
 
   document.getElementsByTagName('head')[0].appendChild(link);
 
+  addExtraStyles(settings);
+  new MutationObserver(function() {
+    addExtraStyles(settings);
+  }).observe(document.getElementById('side-panel'), {
+    childList: true,
+    subtree: true
+  });
+}
+
+function addExtraStyles(settings) {
+  var progressBarsArray = Array.prototype.slice.call(document.getElementsByClassName('progress-bar'));
+
   if (settings['disableBackground']) {
-    var progressBarsArray = Array.prototype.slice.call(document.getElementsByClassName('progress-bar'));
     progressBarsArray.forEach(disableBackground);
   }
 }
 
 function disableBackground(element) {
-  element.style.backgroundColor = 'transparent';
+  element.classList.add('no-background');
 }
 
 function checkUrlAndApplyStyle() {
