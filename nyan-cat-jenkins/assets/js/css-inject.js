@@ -11,7 +11,7 @@ function injectStyle(settings) {
     addExtraStyles(settings);
   }).observe(document.getElementById('side-panel'), {
     childList: true,
-    subtree: true
+    subtree: false
   });
 }
 
@@ -20,11 +20,37 @@ function addExtraStyles(settings) {
 
   if (settings['disableBackground']) {
     progressBarsArray.forEach(disableBackground);
+  } else {
+    progressBarsArray.forEach(addStars);
   }
 }
 
 function disableBackground(element) {
   element.classList.add('no-background');
+}
+
+function addStars(element) {
+  var starContainer = document.createElement('div');
+  starContainer.classList.add('star-container');
+
+  var star = document.createElement('div');
+  star.classList.add('star');
+  starContainer.appendChild(star);
+  randomlyMoveStar(star);
+
+  element.parentNode.appendChild(starContainer);
+}
+
+function randomlyMoveStar(star) {
+  star.style.visibility = 'visible';
+
+  star.style.backgroundPositionY = Math.random() * 18 + 'px';
+  star.style.backgroundPositionX = Math.random() * 150 + 100 + 'px';
+
+  setTimeout(function () {
+    star.style.visibility = 'hidden';
+    randomlyMoveStar(star);
+  }, 600);
 }
 
 function checkUrlAndApplyStyle() {

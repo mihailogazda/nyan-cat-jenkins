@@ -38,3 +38,25 @@ table tr td.progress-bar-left {
 .no-background {
   background-color: transparent !important;
 }
+
+@keyframes starTravel {
+  to {
+    background-position-x: 0;
+  }
+}
+
+.star {
+  width: 150px;
+  height: 25px;
+  background-size: 150px 25px;
+  background: url("chrome-extension://__MSG_@@extension_id__/assets/images/star.gif") no-repeat;
+  background-position-x: 150px;
+  background-position-y: 10px;
+  animation: starTravel 4s linear infinite;
+}
+
+.star-container {
+  height: 25px;
+  width: 150px;
+  margin-top: -25px;
+}
