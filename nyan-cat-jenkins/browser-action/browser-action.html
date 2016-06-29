@@ -3,6 +3,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="browser-action.css">
+    <link rel="stylesheet" type="text/css" href="toggle-checkbox.css">
   </head>
 
   <body>
@@ -21,11 +22,13 @@
                  autocomplete="off">
         </label>
 
-        <label>
-          Disable Background
+        <div class="toggle-container">
+          <label class="toggle-text">Disable Background</label>
           <input id="settings-disable-background"
-                 type="checkbox">
-        </label>
+                 type="checkbox"
+                 class="toggle toggle-light">
+          <label for="settings-disable-background" class="toggle-btn"></label>
+        </div>
 
         <label>
           <input id="settings-form-submit"

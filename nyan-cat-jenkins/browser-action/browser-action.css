@@ -47,12 +47,6 @@ input[type=text]:focus {
   outline: none;
 }
 
-input[type=checkbox] {
-  float: left;
-  display: inline-block;
-  height: 12px;
-}
-
 input[type=submit] {
   width: 54px;
   height: 18px;
