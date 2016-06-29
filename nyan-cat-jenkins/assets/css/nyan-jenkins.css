@@ -10,6 +10,12 @@ table.progress-bar.red {
   background-color: #881100;
 }
 
+table.progress-bar.unknown {
+  /* TODO Test this works */
+  background: #226600 url("chrome-extension://__MSG_@@extension_id__/assets/images/rainbow.gif") repeat-x;
+  background-size: 16px 25px;
+}
+
 .pane.build-controls,
 #executors table td.pane {
   vertical-align: top !important;
