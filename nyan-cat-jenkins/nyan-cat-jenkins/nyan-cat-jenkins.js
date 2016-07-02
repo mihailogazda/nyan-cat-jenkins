@@ -61,12 +61,13 @@ function randomlyMoveStar(star) {
 function checkUrlAndApplyStyle() {
   chrome.storage.sync.get(function(settings) {
     var jenkinsUrl = settings['jenkinsUrl'];
-    if (jenkinsUrl == null) jenkinsUrl = 'ci.';
+    var enabled = settings['enabled'];
 
     // '/' for good measure, eg. if url is 'a.com' but set url is 'a.com/'
-    var currentUrl = window.location.href + '/';
+    var urlMatch = (window.location.href + '/').indexOf(jenkinsUrl) > -1;
+    var allMatcher = jenkinsUrl == null || jenkinsUrl == '';
 
-    if (currentUrl.indexOf(jenkinsUrl) > -1) injectStyle(settings);
+    if (enabled != false && urlMatch) injectStyle(settings);
   });
 }
 

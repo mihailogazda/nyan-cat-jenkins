@@ -14,6 +14,7 @@ function updateSettings(settings) {
 }
 
 function fillSettings(settings) {
+  // Find string by setting name and follow convention instead?
   if (settings.enabled != null) document.getElementById('settings-enabled').checked = settings.enabled;
   if (settings.jenkinsUrl != null) document.getElementById('settings-jenkins-url').value = settings.jenkinsUrl;
   if (settings.disableBackground != null) document.getElementById('settings-disable-background').checked = settings.disableBackground;
@@ -51,7 +52,7 @@ function setFormSubmissionListener() {
 function enableExtensionSettings(enabled) {
   enabled = typeof enabled !== 'undefined' ? enabled : true;
 
-  var form = document.getElementById('settings-form')
+  var form = document.getElementById('settings-form');
   var elements = form.elements;
   for (var i = 0, len = elements.length; i < len; ++i) {
     if (!(elements[i].id == 'settings-enabled') && !(elements[i].id == 'settings-form-submit')) elements[i].disabled = !enabled;
