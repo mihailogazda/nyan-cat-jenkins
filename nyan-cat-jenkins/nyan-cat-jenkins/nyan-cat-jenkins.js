@@ -1,3 +1,8 @@
+function isJenkinsSite() {
+  // body should have id of 'jenkins'
+  return !!document.getElementById('jenkins');
+}
+
 function injectStyle(settings) {
   var link = document.createElement('link');
   link.href = chrome.extension.getURL('nyan-cat-jenkins/nyan-cat-jenkins.css');
@@ -58,11 +63,13 @@ function checkUrlAndApplyStyle() {
     var jenkinsUrl = settings['jenkinsUrl'];
     if (jenkinsUrl == null) jenkinsUrl = 'ci.';
 
-    var currentUrl = window.location.href + '/';
     // '/' for good measure, eg. if url is 'a.com' but set url is 'a.com/'
+    var currentUrl = window.location.href + '/';
 
     if (currentUrl.indexOf(jenkinsUrl) > -1) injectStyle(settings);
   });
 }
 
-checkUrlAndApplyStyle();
+if (isJenkinsSite()) {
+  checkUrlAndApplyStyle();
+}
