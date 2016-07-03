@@ -20,6 +20,14 @@ function fillSettings(settings) {
   if (settings.disableBackground != null)
     document.getElementById('settings-disable-background').checked = settings.disableBackground;
 
+  // Migration from 1.3.0 where a single url was defined for matching
+  if (settings.jenkinsUrl != null) {
+    settings.urlRules.type = 'include';
+    settings.urlRules.urls = [settings.jenkinsUrl];
+    chrome.storage.sync.set({ 'urlRules': settings.urlRules }, null);
+    chrome.storage.sync.remove('jenkinsUrl');
+  }
+
   if (settings.urlRules != null && settings.urlRules.type) {
     document.getElementById('settings-url-type').value = settings.urlRules.type;
     document.getElementById('settings-url-' + settings.urlRules.type).selected = 'selected';
