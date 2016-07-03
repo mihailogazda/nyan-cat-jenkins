@@ -11,12 +11,11 @@ Download now from the [Chrome Web Store](https://chrome.google.com/webstore/deta
 * Animated rainbows and stuff!
 * Starry, space blue background
 * Fancy configuration popup
-* Custom Jenkins server URL
+* Jenkins server matching rules
 
 ## TODOs
 ### Popup UI
-* Fun stuff with a given username?
-* Multiple Jenkins server compatibility?
+* Fun stuff with a given user/project name?
 
 ### Other
 * ~~Add annoying and repetitive background music~~
