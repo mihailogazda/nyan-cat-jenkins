@@ -17,7 +17,8 @@ function updateSettings(settings) {
 function fillSettings(settings) {
   // Find string by setting name and follow convention instead?
   if (settings.enabled != null) document.getElementById('settings-enabled').checked = settings.enabled;
-  if (settings.disableBackground != null) document.getElementById('settings-disable-background').checked = settings.disableBackground;
+  if (settings.disableBackground != null)
+    document.getElementById('settings-disable-background').checked = settings.disableBackground;
 
   if (settings.urlRules != null && settings.urlRules.type) {
     document.getElementById('settings-url-type').value = settings.urlRules.type;
@@ -25,6 +26,8 @@ function fillSettings(settings) {
 
     // TODO And the urls list
     document.getElementById('settings-url-entry').value = settings.urlRules.urls[0];
+
+    updateUrlRuleVisibility();
   }
 
   if (settings.enabled == false) enableExtensionSettings(false);
@@ -67,14 +70,24 @@ function enableExtensionSettings(enabled) {
 
   var form = document.getElementById('settings-form');
   var elements = form.elements;
+
   for (var i = 0, len = elements.length; i < len; ++i) {
-    if (!(elements[i].id == 'settings-enabled') && !(elements[i].id == 'settings-form-submit')) elements[i].disabled = !enabled;
+    if (!(elements[i].id == 'settings-enabled') && !(elements[i].id == 'settings-form-submit'))
+      elements[i].disabled = !enabled;
+  }
+
+  var extensionSettings = document.getElementById('extension-settings');
+  if (enabled) {
+    extensionSettings.style.height = 'auto';
+  } else {
+    extensionSettings.style.height = 0;
   }
 }
 
 function setEnabledListener() {
   var settingsEnabledCheckbox = document.getElementById('settings-enabled');
-  settingsEnabledCheckbox.addEventListener('change', function(e) {
+
+  settingsEnabledCheckbox.addEventListener('change', function() {
     if (settingsEnabledCheckbox.checked) {
       enableExtensionSettings();
     } else {
@@ -83,10 +96,28 @@ function setEnabledListener() {
   });
 }
 
+function updateUrlRuleVisibility() {
+  var settingsUrlTypeCombo = document.getElementById('settings-url-type');
+  var settingsUrlList = document.getElementById('settings-url-list');
+
+  if (settingsUrlTypeCombo.value == 'any') {
+    settingsUrlList.style.height = 0;
+  } else {
+    settingsUrlList.style.height = 'auto';
+  }
+}
+
+function setUrlRulesListener() {
+  document.getElementById('settings-url-type').addEventListener('change', function() {
+    updateUrlRuleVisibility();
+  });
+}
+
 function setListeners() {
   setFormSubmissionListener();
   setEnabledListener();
+  setUrlRulesListener();
 }
 
-setListeners();
 refillSettings();
+setListeners();

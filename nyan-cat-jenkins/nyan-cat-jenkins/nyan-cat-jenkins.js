@@ -77,8 +77,6 @@ function urlRulesMatch(urlRules) {
 
 function checkUrlAndApplyStyle() {
   chrome.storage.sync.get(function(settings) {
-    //console.log(settings);
-
     var enabled = settings['enabled'];
     var urlRules = settings['urlRules'];
 
