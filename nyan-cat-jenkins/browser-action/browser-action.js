@@ -1,10 +1,11 @@
 function validateSettings(settings) {
-  if (settings.jenkinsUrl == '') {
-    document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #cc0000';
-    return false;
-  } else {
-    document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #88cc00';
-  }
+  //TODO: keep doing this, or just skip blanks on updateSettings?
+  // if (settings.urlRules == '') {
+  //   document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #cc0000';
+  //   return false;
+  // } else {
+  //   document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #88cc00';
+  // }
 
   return true;
 }
@@ -16,8 +17,15 @@ function updateSettings(settings) {
 function fillSettings(settings) {
   // Find string by setting name and follow convention instead?
   if (settings.enabled != null) document.getElementById('settings-enabled').checked = settings.enabled;
-  if (settings.jenkinsUrl != null) document.getElementById('settings-jenkins-url').value = settings.jenkinsUrl;
   if (settings.disableBackground != null) document.getElementById('settings-disable-background').checked = settings.disableBackground;
+
+  if (settings.urlRules != null && settings.urlRules.type) {
+    document.getElementById('settings-url-type').value = settings.urlRules.type;
+    document.getElementById('settings-url-' + settings.urlRules.type).selected = 'selected';
+
+    // TODO And the urls list
+    document.getElementById('settings-url-entry').value = settings.urlRules.urls[0];
+  }
 
   if (settings.enabled == false) enableExtensionSettings(false);
 }
@@ -36,7 +44,12 @@ function setFormSubmissionListener() {
 
     var settings = {
       'enabled': document.getElementById('settings-enabled').checked,
-      'jenkinsUrl': document.getElementById('settings-jenkins-url').value,
+      'urlRules': {
+        'type': document.getElementById('settings-url-type').value,
+        'urls': [
+          document.getElementById('settings-url-entry').value
+        ]
+      },
       'disableBackground': document.getElementById('settings-disable-background').checked
     };
 

@@ -58,16 +58,31 @@ function randomlyMoveStar(star) {
   }, 600);
 }
 
+function checkUrlMatch(url) {
+  // '/' for good measure, eg. if url is 'a.com' but set url is 'a.com/'
+  return (window.location.href + '/').indexOf(url) > -1;
+}
+
+function urlRulesMatch(urlRules) {
+  if (urlRules) {
+    if (urlRules.type == 'include') {
+      return urlRules.urls.some(checkUrlMatch);
+    } else if (urlRules.type == 'exclude') {
+      return !urlRules.urls.some(checkUrlMatch);
+    }
+  }
+
+  return true;  // By default, or by 'any'
+}
+
 function checkUrlAndApplyStyle() {
   chrome.storage.sync.get(function(settings) {
-    var jenkinsUrl = settings['jenkinsUrl'];
+    //console.log(settings);
+
     var enabled = settings['enabled'];
+    var urlRules = settings['urlRules'];
 
-    // '/' for good measure, eg. if url is 'a.com' but set url is 'a.com/'
-    var urlMatch = (window.location.href + '/').indexOf(jenkinsUrl) > -1;
-    var allMatcher = jenkinsUrl == null || jenkinsUrl == '';
-
-    if (enabled != false && urlMatch) injectStyle(settings);
+    if (enabled != false && urlRulesMatch(urlRules)) injectStyle(settings);
   });
 }
 

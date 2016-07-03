@@ -23,13 +23,24 @@
           <label for="settings-enabled" class="toggle-btn"></label>
         </div>
 
-        <label>
-          Jenkins Server URL
-          <input id="settings-jenkins-url"
-                 type="text"
-                 placeholder="https://ci.jenkins.org/"
-                 autocomplete="off">
-        </label>
+        <div id="settings-url-rules">
+          <label>
+            Jenkins Server URL
+
+            <select id="settings-url-type">
+              <option id="settings-url-any" value="any" selected="selected">Any</option>
+              <option id="settings-url-include" value="include">Include</option>
+              <option id="settings-url-exclude" value="exclude">Exclude</option>
+            </select>
+          </label>
+
+          <div id="'settings-urls">
+            <input id="settings-url-entry"
+                   type="text"
+                   placeholder="https://ci.jenkins.org/"
+                   autocomplete="off">
+          </div>
+        </div>
 
         <div class="toggle-container">
           <label class="toggle-text">Disable Background</label>
