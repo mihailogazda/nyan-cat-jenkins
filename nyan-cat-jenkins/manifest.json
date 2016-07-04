@@ -3,7 +3,7 @@
 
   "name": "Nyan Cat Jenkins",
   "description": "A Chrome extension for replacing cruddy Jenkins progress bars with sick Nyan Cat rainbow trails!",
-  "version": "1.4.0",
+  "version": "1.4.1",
 
   "browser_action": {
     "name": "Nyan Cat Jenkins",

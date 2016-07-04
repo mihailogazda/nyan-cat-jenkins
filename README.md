@@ -14,6 +14,9 @@ Download now from the [Chrome Web Store](https://chrome.google.com/webstore/deta
 * Jenkins server matching rules
 
 ## TODOs
+### Features
+* Comma-separated URLs for matching rules
+
 ### Popup UI
 * Fun stuff with a given user/project name?
 
