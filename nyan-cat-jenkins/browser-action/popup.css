@@ -1,5 +1,5 @@
 #popup {
-  width: 200px;
+  width: 240px;
   font-weight: 200;
   padding: 1em;
 }
@@ -13,13 +13,13 @@ img#icon {
 h1 {
   text-align: center;
   color: #444;
-  font-size: 140%;
+  font-size: 160%;
   font-weight: 200;
 }
 
 h2 {
   color: #888;
-  font-size: 120%;
+  font-size: 140%;
   font-weight: 200;
   margin-bottom: 0;
 }
