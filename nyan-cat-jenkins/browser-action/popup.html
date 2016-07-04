@@ -2,7 +2,7 @@
 
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="browser-action.css">
+    <link rel="stylesheet" type="text/css" href="popup.css">
     <link rel="stylesheet" type="text/css" href="toggle-checkbox.css">
   </head>
 
@@ -29,38 +29,40 @@
               Jenkins Server URL
 
               <select id="settings-url-type">
-                <option id="settings-url-any" value="any" selected="selected">All</option>
+                <option id="settings-url-any" value="any" selected="selected">Any</option>
                 <option id="settings-url-include" value="include">Include</option>
                 <option id="settings-url-exclude" value="exclude">Exclude</option>
               </select>
             </label>
 
             <div id="settings-url-list">
-              <input id="settings-url-entry"
+              <input class="settings-url-entry"
                      type="text"
                      placeholder="https://ci.jenkins.org/"
                      autocomplete="off">
             </div>
           </div>
 
-          <div class="toggle-container">
+          <div id="disable-background-toggle-container" class="toggle-container">
             <label class="toggle-text">Disable Background</label>
             <input id="settings-disable-background"
                    type="checkbox"
                    class="toggle toggle-light">
             <label for="settings-disable-background" class="toggle-btn"></label>
           </div>
-        </div>
 
-        <label>
-          <input id="settings-form-submit"
-                 type="submit"
-                 value="Save">
-        </label>
+          <div id="disable-stars-toggle-container" class="toggle-container">
+            <label class="toggle-text">Disable Stars</label>
+            <input id="settings-disable-stars"
+                   type="checkbox"
+                   class="toggle toggle-light">
+            <label for="settings-disable-stars" class="toggle-btn"></label>
+          </div>
+        </div>
       </form>
     </div>
 
-    <script src="browser-action.js"></script>
+    <script src="popup.js"></script>
   </body>
 </html>
 

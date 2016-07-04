@@ -23,10 +23,10 @@ function injectStyle(settings) {
 function addExtraStyles(settings) {
   var progressBarsArray = Array.prototype.slice.call(document.getElementsByClassName('progress-bar'));
 
-  if (settings['disableBackground']) {
+  if (settings.disableBackground) {
     progressBarsArray.forEach(disableBackground);
   } else {
-    progressBarsArray.forEach(addStars);
+    if (!settings.disableStars) progressBarsArray.forEach(addStars);
   }
 }
 
@@ -77,8 +77,8 @@ function urlRulesMatch(urlRules) {
 
 function checkUrlAndApplyStyle() {
   chrome.storage.sync.get(function(settings) {
-    var enabled = settings['enabled'];
-    var urlRules = settings['urlRules'];
+    var enabled = settings.enabled;
+    var urlRules = settings.urlRules;
 
     if (enabled != false && urlRulesMatch(urlRules)) injectStyle(settings);
   });

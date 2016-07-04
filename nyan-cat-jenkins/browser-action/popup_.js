@@ -1,15 +1,3 @@
-function validateSettings(settings) {
-  //TODO: keep doing this, or just skip blanks on updateSettings?
-  // if (settings.urlRules == '') {
-  //   document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #cc0000';
-  //   return false;
-  // } else {
-  //   document.getElementById('settings-jenkins-url').style['border-bottom'] = '1px solid #88cc00';
-  // }
-
-  return true;
-}
-
 function updateSettings(settings) {
   chrome.storage.sync.set(settings, null);
 }
@@ -19,6 +7,8 @@ function fillSettings(settings) {
   if (settings.enabled != null) document.getElementById('settings-enabled').checked = settings.enabled;
   if (settings.disableBackground != null)
     document.getElementById('settings-disable-background').checked = settings.disableBackground;
+  if (settings.disableStars != null)
+    document.getElementById('settings-disable-stars').checked = settings.disableStars;
 
   // Migration from 1.3.0 where a single url was defined for matching
   if (settings.jenkinsUrl != null) {
@@ -61,15 +51,12 @@ function setFormSubmissionListener() {
           document.getElementById('settings-url-entry').value
         ]
       },
-      'disableBackground': document.getElementById('settings-disable-background').checked
+      'disableBackground': document.getElementById('settings-disable-background').checked,
+      'disableStars': document.getElementById('settings-disable-stars').checked
     };
 
-    if (validateSettings(settings)) {
-      updateSettings(settings);
-      refillSettings();
-    } else {
-      refillSettings(settings);
-    }
+    updateSettings(settings);
+    refillSettings();
   }, false);
 }
 
@@ -92,6 +79,17 @@ function enableExtensionSettings(enabled) {
   }
 }
 
+function enableBackgroundSettings(enabled) {
+  enabled = typeof enabled !== 'undefined' ? enabled : true;
+
+  var starSettings = document.getElementById('disable-stars-toggle-container');
+  if (enabled) {
+    starSettings.style.height = 'auto';
+  } else {
+    starSettings.style.height = 0;
+  }
+}
+
 function setEnabledListener() {
   var settingsEnabledCheckbox = document.getElementById('settings-enabled');
 
@@ -100,6 +98,18 @@ function setEnabledListener() {
       enableExtensionSettings();
     } else {
       enableExtensionSettings(false);
+    }
+  });
+}
+
+function setBackgroundListener() {
+  var settingsBackgroundCheckbox = document.getElementById('settings-disable-background');
+
+  settingsBackgroundCheckbox.addEventListener('change', function() {
+    if (settingsBackgroundCheckbox.checked) {
+      enableBackgroundSettings(false);
+    } else {
+      enableBackgroundSettings();
     }
   });
 }
@@ -124,8 +134,9 @@ function setUrlRulesListener() {
 function setListeners() {
   setFormSubmissionListener();
   setEnabledListener();
+  setBackgroundListener();
   setUrlRulesListener();
 }
 
-refillSettings();
 setListeners();
+refillSettings();

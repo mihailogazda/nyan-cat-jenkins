@@ -16,7 +16,7 @@
       "384": "assets/images/icon/icon_384.png"
     },
     "default_title": "Nyan, nyan, nyan! :3",
-    "default_popup": "browser-action/browser-action.html"
+    "default_popup": "browser-action/popup.html"
   },
 
   "icons": {
