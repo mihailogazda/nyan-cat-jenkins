@@ -60,15 +60,15 @@ function randomlyMoveStar(star) {
 
 function checkUrlMatch(url) {
   // '/' for good measure, eg. if url is 'a.com' but set url is 'a.com/'
-  return (window.location.href + '/').indexOf(url) > -1;
+  return (window.location.href + '/').indexOf(url.trim()) > -1;
 }
 
 function urlRulesMatch(urlRules) {
   if (urlRules) {
     if (urlRules.type == 'include') {
-      return urlRules.urls.some(checkUrlMatch);
+      return urlRules.urls[0].split(',').some(checkUrlMatch);
     } else if (urlRules.type == 'exclude') {
-      return !urlRules.urls.some(checkUrlMatch);
+      return !urlRules.urls[0].split(',').some(checkUrlMatch);
     }
   }
 

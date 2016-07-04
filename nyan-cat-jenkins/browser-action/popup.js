@@ -72,8 +72,6 @@ function setBackgroundDisabledListener() {
       disableBackground: backgroundDisabledCheckbox.checked
     });
 
-    var starsDisabledCheckbox = document.getElementById('settings-disable-stars');
-    //if (backgroundDisabledCheckbox.checked) starsDisabledCheckbox.checked = true;
     disableElementAndChildren(document.getElementById('disable-stars-toggle-container'), backgroundDisabledCheckbox.checked);
   });
 }
@@ -123,6 +121,9 @@ function refillSettings(settings) {
   settings.urlRules = definedValueOrDefault(settings.urlRules, {});
   document.getElementById('settings-url-type').value = definedValueOrDefault(settings.urlRules.type, 'any');
   document.getElementById('settings-url-' + definedValueOrDefault(settings.urlRules.type, 'any')).selected = 'selected';
+
+  if (definedValueOrDefault(settings.urlRules.type, 'any') == 'any') disableElementAndChildren(document.getElementById('settings-url-list'));
+
   // TODO url entrIES
   document.getElementsByClassName('settings-url-entry')[0].value = definedValueOrDefault(settings.urlRules.urls, [''])[0];
 
