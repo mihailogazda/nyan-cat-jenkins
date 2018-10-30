@@ -13,7 +13,7 @@ function addStars(element) {
   starContainer.appendChild(star);
   randomlyMoveStar(star);
 
-  document.body.appendChild(starContainer);
+  element.parentNode.appendChild(starContainer);
 }
 
 function randomlyMoveStar(star) {
@@ -28,4 +28,9 @@ function randomlyMoveStar(star) {
   }, 600);
 }
 
-letsAddStars();
+window.document.onload = function(e)
+{ 
+	console.log("Adding stars to Jenkins!");
+	letsAddStars();
+}
+
