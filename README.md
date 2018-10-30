@@ -14,12 +14,12 @@ But instead of Chrome extension its just a CSS file.
 On your Jenkins instance, go to Settings / Configure System, and simply add the URL of the CSS file, or CSS content  directly to Theme.
 
 If using URL simply set it to:
-https://raw.githubusercontent.com/mihailogazda/nyan-cat-jenkins/master/NyanCatJenkins.css
+https://mihailogazda.github.io/nyan-cat-jenkins/NyanCatJenkins.css
 
 ![screenshot image](jenkins.png)
 
 To add the star animations, simply add new JS URL:
-https://cdn.jsdelivr.net/gh/mihailogazda/nyan-cat-jenkins@1c67cad5504ff17301c058eca96c2c9a2906cf98/NyanCatJenkins.js
+https://mihailogazda.github.io/nyan-cat-jenkins/NyanCatJenkins.js
 
 ## Features
 * Animated rainbows and stuff!
