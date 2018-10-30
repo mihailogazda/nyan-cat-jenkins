@@ -11,7 +11,7 @@ But instead of Chrome extension its just a CSS file.
 
 On your Jenkins instance, go to Settings / Configure System, and simply add the URL of the CSS file, or CSS content  directly to Theme.
 
-![screenshot image] (jenkins.png)
+![screenshot image](jenkins.png)
 
 ## Screenshot
 ![screenshot image](screenshot.png)
