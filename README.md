@@ -13,6 +13,9 @@ But instead of Chrome extension its just a CSS file.
 ## Install 
 On your Jenkins instance, go to Settings / Configure System, and simply add the URL of the CSS file, or CSS content  directly to Theme.
 
+If using URL simply set it to:
+https://raw.githubusercontent.com/mihailogazda/nyan-cat-jenkins/master/NyanCatJenkins.css
+
 ![screenshot image](jenkins.png)
 
 ## Features
