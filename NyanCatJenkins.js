@@ -28,9 +28,8 @@ function randomlyMoveStar(star) {
   }, 600);
 }
 
-window.document.onload = function(e)
-{ 
+document.addEventListener("DOMContentLoaded", function(event) {
 	console.log("Adding stars to Jenkins!");
 	letsAddStars();
-}
+});
 
