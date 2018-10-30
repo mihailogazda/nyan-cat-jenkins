@@ -18,6 +18,9 @@ https://raw.githubusercontent.com/mihailogazda/nyan-cat-jenkins/master/NyanCatJe
 
 ![screenshot image](jenkins.png)
 
+To add the star animations, simply add new JS URL:
+https://cdn.jsdelivr.net/gh/mihailogazda/nyan-cat-jenkins@1c67cad5504ff17301c058eca96c2c9a2906cf98/NyanCatJenkins.js
+
 ## Features
 * Animated rainbows and stuff!
 * Starry, space blue background

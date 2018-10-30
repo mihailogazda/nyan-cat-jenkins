@@ -1,5 +1,5 @@
 function letsAddStars()
-{
+{	
 	var progressBarsArray = Array.prototype.slice.call(document.getElementsByClassName('progress-bar'));
 	progressBarsArray.forEach(addStars);
 }
@@ -13,7 +13,7 @@ function addStars(element) {
   starContainer.appendChild(star);
   randomlyMoveStar(star);
 
-  element.parentNode.appendChild(starContainer);
+  document.body.appendChild(starContainer);
 }
 
 function randomlyMoveStar(star) {
